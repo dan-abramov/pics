@@ -4,7 +4,10 @@ class ImagesController < ApplicationController
   end
 
   def create
+    pry
     @image = Image.create!(image_params)
+    Tagging.create_relationships(tags, @image) if tags != ''
+
     redirect_to @image
   end
 
@@ -15,6 +18,10 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:title, :description, :image, :user_id, :tags)
+    params.require(:image).permit(:title, :description, :image, :user_id)
+  end
+
+  def tags
+    params.require(:image).permit(:tags)[:tags]
   end
 end
