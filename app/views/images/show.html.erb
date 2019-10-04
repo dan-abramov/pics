@@ -1,6 +1,14 @@
-<%= @image.title %>
-<%= @image.description %>
-<div style=''>
+<div class="info">
+  <div class="show-image-info">
+    <div class="show-image-user">
+      <%= @image.user %>
+    </div>
+  </div>
 
-  <%= image_tag url_for(@image.image), style: 'height: 100px;'%>
+  <div class="show-image-description">
+  </div>
+</div>
+
+<div class="image-container">
+  <%= image_tag url_for(@image.image), class: 'show-image'%>
 </div>
