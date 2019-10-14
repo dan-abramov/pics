@@ -1,14 +1,30 @@
 <div class="info">
   <div class="show-image-info">
-    <div class="show-image-user">
-      <%= @image.user %>
+    <div class="show-image-user-name ">
+      <div class="centered-container" style="text-align: center;">
+        <%= @image.user %>
+      </div>
+    </div>
+    <div class="show-image-tags">
+      <div class="centered-container" style="height: 98%;">
+        <% @image.tags.each do |tag|%>
+          <%= tag.name %>
+          &nbsp;
+        <% end %>
+      </div>
     </div>
   </div>
 
   <div class="show-image-description">
+    <div class="centered-container" style="height: 98%;">
+      <%= @image.description %>
+    </div>
   </div>
 </div>
 
 <div class="image-container">
+  <div style="color:black">
+    <h2><%= @image.title %></h2>
+  </div>
   <%= image_tag url_for(@image.image), class: 'show-image'%>
 </div>
