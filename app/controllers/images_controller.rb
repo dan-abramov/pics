@@ -3,8 +3,17 @@ class ImagesController < ApplicationController
     @image = Image.new
   end
 
+  def index
+    @pagy, @images = pagy(Image.all)
+    images = Image.all
+    @tags = []
+    images.each do |image|
+      @tags << image.tags
+    end
+    @tags.flatten!.uniq!
+  end
+
   def create
-    pry
     @image = Image.create!(image_params)
     Tagging.create_relationships(tags, @image) if tags != ''
 

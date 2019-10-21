@@ -1,11 +1,11 @@
-<div class="info">
-  <div class="show-image-info">
+<div class="info-part">
+  <div class="info">
     <div class="show-image-user-name ">
       <div class="centered-container" style="text-align: center;">
         <%= @image.user %>
       </div>
     </div>
-    <div class="show-image-tags">
+    <div class="tags">
       <div class="centered-container" style="height: 98%;">
         <% @image.tags.each do |tag|%>
           <%= tag.name %>
@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div class="image-container">
+<div class="exhibition-part">
   <div style="color:black">
     <h2><%= @image.title %></h2>
   </div>

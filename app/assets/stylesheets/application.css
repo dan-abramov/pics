@@ -17,7 +17,7 @@
  html, body {
    padding: 0;
    margin: 0;
-   color: white;
+   color: black;
  }
 
  .wrapper {
@@ -26,7 +26,7 @@
    margin: 0 auto;
  }
 
- .info {
+ .info-part {
    float: left;
    width: 20%;
    height: 100vh;

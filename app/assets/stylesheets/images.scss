@@ -1,10 +1,15 @@
 // Place all the styles related to the Images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.image-container {
+.exhibition-part {
   float: right;
   width: 70%;
   height: 100vh;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 70px;
 }
 
 .show-image {
@@ -12,9 +17,45 @@
   max-height: 100%;
 }
 
-.show-image-info {
+.images {
+  height: 75%;
   width: 100%;
-  height: calc(100vh/100 * 75);
+}
+
+.four-imgs {
+  width: 100%;
+  height: 33.3333333333%;
+}
+
+.image-container {
+  width: 25%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.image-container:hover {
+  transform: scale(1.5, 1.5);
+  z-index: 1;
+  background-color: rgba(0,0,0,.4);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 3%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info {
+  width: 100%;
+  height: 75%;
   border-style: solid;
   border-width: 1px;
   border-color: black;
@@ -32,7 +73,7 @@
   color: black;
 }
 
-.show-image-tags {
+.tags {
   width: 100%;
   height: 90%;
   color: black;
