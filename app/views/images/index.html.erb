@@ -3,7 +3,11 @@
     <div class="tags">
       <div class="centered-container" style="height: 98%;">
         <% @tags.each do |tag| %>
-          <%= tag.name %>
+          <a href="<%= tag.name %>">
+            <%= tag.name %>
+            (<%= tag.images.length %>)
+            <br>
+          </a>
         <% end %>
       </div>
     </div>
@@ -15,27 +19,33 @@
     <div class="four-imgs">
       <% if @images[0...4] %>
         <% @images[0...4].each do |image| %>
-          <div class="image-container">
-            <%= image_tag url_for(image.image), class: 'image'%>
-          </div>
+          <a href="<%= image_path(image) %>">
+            <div class="image-container">
+              <%= image_tag url_for(image.image), class: 'image'%>
+            </div>
+          </a>
         <% end %>
       <% end %>
     </div>
     <div class="four-imgs">
       <% if @images[4...8] %>
         <% @images[4...8].each do |image| %>
-          <div class="image-container">
-            <%= image_tag url_for(image.image), class: 'image'%>
-          </div>
+          <a href="<%= image_path(image) %>">
+            <div class="image-container">
+              <%= image_tag url_for(image.image), class: 'image'%>
+            </div>
+          </a>
         <% end %>
       <% end %>
     </div>
     <div class="four-imgs">
       <% if @images[8...12] %>
         <% @images[8...12].each do |image| %>
-          <div class="image-container">
-            <%= image_tag url_for(image.image), class: 'image'%>
-          </div>
+          <a href="<%= image_path(image) %>">
+            <div class="image-container">
+              <%= image_tag url_for(image.image), class: 'image'%>
+            </div>
+          </a>
         <% end %>
       <% end %>
     </div>

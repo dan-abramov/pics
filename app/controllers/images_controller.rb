@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
       @tags << image.tags
     end
     @tags.flatten!.uniq!
+    @tags = @tags.sort_by { |tag| tag.images.length }.reverse
   end
 
   def create
