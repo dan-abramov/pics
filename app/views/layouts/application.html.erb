@@ -14,7 +14,11 @@
       <!-- <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p> -->
       <div class="search">
-        <input type="search" placeholder="Будущий поиск">
+        <%= form_for images_path, method: :get do |form| %>
+          <%= form.text_field :search_request, value: params['/images']["search_request"] %>
+          <%= form.submit 'Поиск'%>
+        <% end %>
+
       </div>
       <%= yield %>
     </div>

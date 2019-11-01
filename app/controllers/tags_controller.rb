@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
   def show
     @tag = Tag.where(tag_params).first
-    @pagy, @images = pagy(@tag.images, items: 15)
+    @pagy, @images = pagy(@tag.images)
   end
 
   private
