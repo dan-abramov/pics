@@ -14,9 +14,13 @@
       <!-- <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p> -->
       <div class="search">
-        <%= form_for images_path, method: :get do |form| %>
-          <%= form.text_field :search_request, value: params['/images']["search_request"] %>
-          <%= form.submit 'Поиск'%>
+        <%= form_tag('/search', method: :get) do %>
+          <% if params['search'] %>
+            <%= text_field_tag 'search', params['search'] %>
+          <% else %>
+            <%= text_field_tag 'search' %>
+          <% end %>
+          <div><%= submit_tag 'Поиск' %></div>
         <% end %>
 
       </div>
